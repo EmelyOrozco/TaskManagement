@@ -1,0 +1,434 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\services\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\services\\tagsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\services\\tagsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\services\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\services\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\services\\itagsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\services\\itagsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\entities\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\entities\\tasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\entities\\tags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\entities\\tags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\repositories\\itagsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\repositories\\itagsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.persistence\\base\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|solutionrelative:taskmanagement.persistence\\base\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\base\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\base\\operationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.persistence\\context\\taskcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|solutionrelative:taskmanagement.persistence\\context\\taskcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\services\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\services\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\repositories\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\repositories\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\interfaces\\repositories\\tasksinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\interfaces\\repositories\\tasksinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\entities\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\entities\\taskstags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\entities\\taskstags.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30AF5FEC-732A-4590-A02A-51779253C1EB}|TaskManagement.API\\TaskManagement.API.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30AF5FEC-732A-4590-A02A-51779253C1EB}|TaskManagement.API\\TaskManagement.API.csproj|solutionrelative:taskmanagement.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30AF5FEC-732A-4590-A02A-51779253C1EB}|TaskManagement.API\\TaskManagement.API.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{30AF5FEC-732A-4590-A02A-51779253C1EB}|TaskManagement.API\\TaskManagement.API.csproj|solutionrelative:taskmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.persistence\\taskmanagement.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{66860F2B-E263-4E4A-8280-8A8EC7806EB1}|TaskManagement.Persistence\\TaskManagement.Persistence.csproj|solutionrelative:taskmanagement.persistence\\taskmanagement.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.domain\\taskmanagement.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{44385539-B010-4E01-98CA-E4D869769730}|TaskManagement.Domain\\TaskManagement.Domain.csproj|solutionrelative:taskmanagement.domain\\taskmanagement.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|c:\\users\\orozco\\onedrive\\desktop\\curso csharp avanzado\\taskmanagement\\taskmanagement.application\\taskmanagement.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9DB84138-033F-40E9-B61C-A54033C3E99B}|TaskManagement.Application\\TaskManagement.Application.csproj|solutionrelative:taskmanagement.application\\taskmanagement.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 225,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\IBaseService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Services\\IBaseService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\IBaseService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Services\\IBaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:21:21.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\BaseService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Services\\BaseService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAkwE0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T01:03:46.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T01:03:00.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TagsService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\TagsService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Services\\TagsService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\TagsService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Services\\TagsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T01:02:41.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\TaskService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Services\\TaskService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Services\\TaskService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Services\\TaskService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T01:02:26.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaskDto.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Dtos\\TaskDto.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Dtos\\TaskDto.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Dtos\\TaskDto.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Dtos\\TaskDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T00:40:40.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Repositories\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\IBaseRepository.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Repositories\\IBaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:14:01.052Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ITagsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\ITagsRepository.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Repositories\\ITagsRepository.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\ITagsRepository.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Repositories\\ITagsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:15:31.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\Base\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Persistence\\Base\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\Base\\BaseRepository.cs",
+              "RelativeToolTip": "TaskManagement.Persistence\\Base\\BaseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T00:52:39.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\ITaskService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Services\\ITaskService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\ITaskService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Services\\ITaskService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:20:56.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OperationResult.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Base\\OperationResult.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\Base\\OperationResult.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Base\\OperationResult.cs",
+              "RelativeToolTip": "TaskManagement.Domain\\Base\\OperationResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T23:38:56.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITagsService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\ITagsService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Services\\ITagsService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\ITagsService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Services\\ITagsService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:19:40.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TaskContext.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\Context\\TaskContext.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Persistence\\Context\\TaskContext.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\Context\\TaskContext.cs",
+              "RelativeToolTip": "TaskManagement.Persistence\\Context\\TaskContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T00:53:01.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUsersService.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\IUsersService.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Services\\IUsersService.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Services\\IUsersService.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Services\\IUsersService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:20:00.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Tags.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Tags.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\Entities\\Tags.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Tags.cs",
+              "RelativeToolTip": "TaskManagement.Domain\\Entities\\Tags.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T01:00:06.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Tasks.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Tasks.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\Entities\\Tasks.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Tasks.cs",
+              "RelativeToolTip": "TaskManagement.Domain\\Entities\\Tasks.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T01:00:28.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IUsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\IUsersRepository.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Repositories\\IUsersRepository.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\IUsersRepository.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Repositories\\IUsersRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:16:23.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TasksInterface.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\TasksInterface.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\Interfaces\\Repositories\\TasksInterface.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\Interfaces\\Repositories\\TasksInterface.cs",
+              "RelativeToolTip": "TaskManagement.Application\\Interfaces\\Repositories\\TasksInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T02:12:54.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Users.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\Entities\\Users.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\Users.cs",
+              "RelativeToolTip": "TaskManagement.Domain\\Entities\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T01:02:29.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TasksTags.cs",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\TasksTags.cs",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\Entities\\TasksTags.cs",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\Entities\\TasksTags.cs",
+              "RelativeToolTip": "TaskManagement.Domain\\Entities\\TasksTags.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T01:02:00.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "TaskManagement.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.API\\appsettings.Development.json",
+              "RelativeToolTip": "TaskManagement.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-17T00:55:06.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.API\\appsettings.json",
+              "RelativeDocumentMoniker": "TaskManagement.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.API\\appsettings.json",
+              "RelativeToolTip": "TaskManagement.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-17T00:54:59.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TaskManagement.Persistence.csproj",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\TaskManagement.Persistence.csproj",
+              "RelativeDocumentMoniker": "TaskManagement.Persistence\\TaskManagement.Persistence.csproj",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Persistence\\TaskManagement.Persistence.csproj",
+              "RelativeToolTip": "TaskManagement.Persistence\\TaskManagement.Persistence.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-17T00:51:46.069Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "TaskManagement.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\TaskManagement.Domain.csproj",
+              "RelativeDocumentMoniker": "TaskManagement.Domain\\TaskManagement.Domain.csproj",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Domain\\TaskManagement.Domain.csproj",
+              "RelativeToolTip": "TaskManagement.Domain\\TaskManagement.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-17T00:48:01.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TaskManagement.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\TaskManagement.Application.csproj",
+              "RelativeDocumentMoniker": "TaskManagement.Application\\TaskManagement.Application.csproj",
+              "ToolTip": "C:\\Users\\Orozco\\OneDrive\\Desktop\\Curso Csharp Avanzado\\TaskManagement\\TaskManagement.Application\\TaskManagement.Application.csproj",
+              "RelativeToolTip": "TaskManagement.Application\\TaskManagement.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-17T00:46:15.78Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

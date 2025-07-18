@@ -1,0 +1,94 @@
+﻿using Microsoft.Extensions.Logging;
+using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Interfaces.Repositories;
+using TaskManagement.Application.Interfaces.Services;
+using TaskManagement.Domain.Base;
+
+namespace TaskManagement.Application.Services
+{
+    public abstract class BaseService<TDto, TEntity> : IBaseService<TDto> where TEntity : class
+    {
+        protected readonly IBaseRepository<TEntity> _repository;
+        protected readonly ILogger _logger;
+        protected BaseService(IBaseRepository<TEntity> repository, ILogger logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+        public async Task<OperationResult<List<TDto>>> GetAllAsync()
+        {
+            try
+            {
+                var result = await _repository.GetAllAsync(x => true);
+                if (result == null)
+                {
+                    return OperationResult<List<TDto>>.Failure("No se encontraron elementos");
+                }
+                return OperationResult<List<TDto>>.Success("Datos obtenidos", result.Data);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error obteniendo datos");
+                return OperationResult<List<TDto>>.Failure($"Error: {ex.Message}");
+            }
+        }
+
+        public async Task<OperationResult<TDto>> GetByIdAsync(int id)
+        {
+            _logger.LogInformation($"Getting entity of type {typeof(TEntity).Name} with ID {id}");
+            try
+            {
+                if (id <= 0)
+                {
+                    return OperationResult<TDto>.Failure("The ID must be greater than 0");
+                }
+                var entity = await _repository.GetByIdAsync(id);
+                if (entity is null)
+                {
+                    return OperationResult<TDto>.Failure($"No entity found with ID {id}");
+                }
+                return OperationResult<TDto>.Success("Entity retrieved successfully", entity.Data);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"An error occurred while retrieving the entity with ID {id}: {ex.Message}");
+                return OperationResult<TDto>.Failure($"Error retrieving entity: {ex.Message}");
+            }
+            
+        }
+
+        public Task<OperationResult<TDto>> CreateAsync(TDto dto)
+        {
+            //try
+            //{
+            //    var result = _repository.AddAsync(dto);
+            //    if (!result)
+            //    {
+                    
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    _logger.LogError(ex, "Error creating entity");
+            //    return Task.FromResult(OperationResult<TDto>.Failure($"Error: {ex.Message}"));
+            //}
+            throw new NotImplementedException();
+
+        }
+
+        public Task<OperationResult<TDto>> UpdateAsync(int id, TDto dto)
+        {
+            _logger.LogInformation($"Updating entity of type {typeof(TEntity).Name}");
+           throw new NotImplementedException();
+        }
+
+        public Task<OperationResult<TDto>> DeleteAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+    }
+    
+}

@@ -1,7 +1,96 @@
 ﻿
+using Microsoft.Extensions.Logging;
+using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Extentions;
+using TaskManagement.Application.Interfaces.Repositories;
+using TaskManagement.Application.Interfaces.Services;
+using TaskManagement.Domain.Base;
+using TaskManagement.Domain.Entities;
+
 namespace TaskManagement.Application.Services
 {
-    public class TaskService
+    public class TaskService : BaseService<TaskDto<int>, Tasks>, ITaskService
     {
+        public TaskService(ITasksRepository repository, ILogger<TaskService> logger) 
+            : base(repository, logger)
+        {
+        }
+        public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
+        {
+            try
+            {
+                var entity = dto.ToEntityFromDTo();
+
+                var result = await _repository.AddAsync(entity);
+
+                if (!result.IsSuccess)
+                    return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
+
+                return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data.ToDtoFromEntity());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creando la tarea");
+                return OperationResult<TaskDto<int>>.Failure($"Error: {ex.Message}");
+            }
+        }
+
+        public async Task<OperationResult<TaskDto<int>>> UpdateAsync(int id, TaskDto<int> dto)
+        {
+            try
+            {
+                var entity = dto.ToEntityFromDTo();
+                entity.TaskId = id;
+
+                var result = await _repository.UpdateAsync(entity);
+
+                if (!result.IsSuccess)
+                    return OperationResult<TaskDto<int>>.Failure("No se pudo actualizar la tarea");
+
+                return OperationResult<TaskDto<int>>.Success("Tarea actualizada correctamente", result.Data.ToDtoFromEntity());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error actualizando la tarea con ID {id}");
+                return OperationResult<TaskDto<int>>.Failure($"Error: {ex.Message}");
+            }
+        }
+
+        public async Task<OperationResult<TaskDto<int>>> DeleteAsync(int id)
+        {
+            try
+            {
+                var getResult = await _repository.GetByIdAsync(id);
+
+                if (!getResult.IsSuccess || getResult.Data == null)
+                    return OperationResult<TaskDto<int>>.Failure("Tarea no encontrada");
+
+                var deleteResult = await _repository.DeleteAsync(getResult.Data);
+
+                if (!deleteResult)
+                    return OperationResult<TaskDto<int>>.Failure("No se pudo eliminar la tarea");
+
+                return OperationResult<TaskDto<int>>.Success("Tarea eliminada correctamente");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error eliminando la tarea con ID {id}");
+                return OperationResult<TaskDto<int>>.Failure($"Error: {ex.Message}");
+            }
+        }
+
+        //Task<OperationResult<TaskDto<int>>> IBaseService<TaskDto<int>>.GetByIdAsync(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //Task<OperationResult<List<TaskDto<int>>>> IBaseService<TaskDto<int>>.GetAllAsync()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+       
+
+  
     }
 }

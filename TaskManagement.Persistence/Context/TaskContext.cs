@@ -14,7 +14,7 @@ namespace TaskManagement.Persistence.Context
             base.OnModelCreating(modelBuilder);
         }
         
-       public DbSet<Task> Tasks { get; set; }
+       public DbSet<Tasks> Tasks { get; set; }
        public DbSet<Users> Users { get; set; }
        public DbSet<Tags> Tags { get; set; }
        public DbSet<TasksTags> TasksTags { get; set; }

@@ -10,7 +10,6 @@ namespace TaskManagement.Application.Extentions
             
             return new Tasks
             {
-                TaskId = taskDto.TaskId,
                 UserId = taskDto.UserId,
                 Description = taskDto.Description,
                 DueDate = taskDto.DueDate,
@@ -25,7 +24,6 @@ namespace TaskManagement.Application.Extentions
         {
             return new TaskDto<T>
             {
-                TaskId = task.TaskId,
                 UserId = task.UserId,
                 Description = task.Description,
                 DueDate = task.DueDate,

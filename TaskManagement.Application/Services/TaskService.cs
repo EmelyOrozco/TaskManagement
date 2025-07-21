@@ -11,9 +11,13 @@ namespace TaskManagement.Application.Services
 {
     public class TaskService : BaseService<TaskDto<int>, Tasks>, ITaskService
     {
+        private readonly ITasksRepository _repository;
+        private readonly ILogger<TaskService> _logger;
         public TaskService(ITasksRepository repository, ILogger<TaskService> logger) 
             : base(repository, logger)
         {
+            _repository = repository;
+            _logger = logger;
         }
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
         {
@@ -23,10 +27,11 @@ namespace TaskManagement.Application.Services
 
                 var result = await _repository.AddAsync(entity);
 
-                if (!result.IsSuccess)
+                if (!result.IsSuccess) { 
+                    _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
                     return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
-
-                return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data.ToDtoFromEntity());
+                }
+                return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data);
             }
             catch (Exception ex)
             {
@@ -47,7 +52,7 @@ namespace TaskManagement.Application.Services
                 if (!result.IsSuccess)
                     return OperationResult<TaskDto<int>>.Failure("No se pudo actualizar la tarea");
 
-                return OperationResult<TaskDto<int>>.Success("Tarea actualizada correctamente", result.Data.ToDtoFromEntity());
+                return OperationResult<TaskDto<int>>.Success("Tarea actualizada correctamente", result.Data);
             }
             catch (Exception ex)
             {
@@ -63,13 +68,15 @@ namespace TaskManagement.Application.Services
                 var getResult = await _repository.GetByIdAsync(id);
 
                 if (!getResult.IsSuccess || getResult.Data == null)
+                {
                     return OperationResult<TaskDto<int>>.Failure("Tarea no encontrada");
-
+                }
                 var deleteResult = await _repository.DeleteAsync(getResult.Data);
 
-                if (!deleteResult)
+                if (!deleteResult.IsSuccess) 
+                { 
                     return OperationResult<TaskDto<int>>.Failure("No se pudo eliminar la tarea");
-
+                }
                 return OperationResult<TaskDto<int>>.Success("Tarea eliminada correctamente");
             }
             catch (Exception ex)

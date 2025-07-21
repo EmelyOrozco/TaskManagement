@@ -58,7 +58,11 @@ namespace TaskManagement.Persistence.Base
             catch (Exception ex)
             {
 
-                return OperationResult<TEntity>.Failure($"Error adding entity: {typeof(TEntity)} - {ex.Message}");
+                var innerMessage = ex.InnerException?.Message ?? ex.Message;
+
+               // _logger.LogError(ex, $"Error al guardar entidad {typeof(TEntity)}: {innerMessage}");
+
+                return OperationResult<TEntity>.Failure($"Error agregando entidad: {innerMessage}");
             }
         }
         public virtual async Task<OperationResult<TEntity>> UpdateAsync(TEntity entity)
@@ -78,7 +82,7 @@ namespace TaskManagement.Persistence.Base
         {
             try
             {
-                _dbSet.Update(entity);
+                _dbSet.Remove(entity);
                 await _context.SaveChangesAsync();
                 return OperationResult<TEntity>.Success($"Entity {typeof(TEntity)} updated successfully", entity);
             }

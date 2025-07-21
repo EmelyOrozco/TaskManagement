@@ -16,9 +16,9 @@ namespace TaskManagement.Application.Dtos
 
         public int? Priority { get; set; }
 
-        public DateTime? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public Guid Rowguid { get; set; }
+        public Guid Rowguid { get; set; } = Guid.NewGuid();
 
 
     }

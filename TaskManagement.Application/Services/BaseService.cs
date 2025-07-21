@@ -58,7 +58,7 @@ namespace TaskManagement.Application.Services
             
         }
 
-        public Task<OperationResult<TDto>> CreateAsync(TDto dto)
+        public async Task<OperationResult<TDto>> CreateAsync(TDto dto)
         {
             //try
             //{
@@ -77,13 +77,13 @@ namespace TaskManagement.Application.Services
 
         }
 
-        public Task<OperationResult<TDto>> UpdateAsync(int id, TDto dto)
+        public async Task<OperationResult<TDto>> UpdateAsync(int id, TDto dto)
         {
-            _logger.LogInformation($"Updating entity of type {typeof(TEntity).Name}");
+            
            throw new NotImplementedException();
         }
 
-        public Task<OperationResult<TDto>> DeleteAsync(int id)
+        public async Task<OperationResult<TDto>> DeleteAsync(int id)
         {
             throw new NotImplementedException();
         }

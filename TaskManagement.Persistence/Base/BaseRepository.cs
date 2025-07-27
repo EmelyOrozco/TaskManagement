@@ -75,7 +75,8 @@ namespace TaskManagement.Persistence.Base
             }
             catch (Exception ex)
             {
-                return OperationResult<TEntity>.Failure($"Error updating entity: {typeof(TEntity)} - {ex.Message}");
+                var innerMessage = ex.InnerException?.Message ?? ex.Message;
+                return OperationResult<TEntity>.Failure($"Error updating entity: {innerMessage}");
             }
         }
         public virtual async Task<OperationResult<TEntity>> DeleteAsync(TEntity entity)
@@ -84,7 +85,7 @@ namespace TaskManagement.Persistence.Base
             {
                 _dbSet.Remove(entity);
                 await _context.SaveChangesAsync();
-                return OperationResult<TEntity>.Success($"Entity {typeof(TEntity)} updated successfully", entity);
+                return OperationResult<TEntity>.Success($"Entity {typeof(TEntity)} delete successfully", entity);
             }
             catch (Exception ex)
             {

@@ -15,7 +15,7 @@ namespace TaskManagement.Domain.Entities
 
         public DateTime DueDate { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         public int? Priority { get; set; }
 

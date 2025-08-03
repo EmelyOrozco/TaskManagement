@@ -8,8 +8,9 @@ namespace TaskManagement.Application.Services
 {
     public abstract class BaseService<TDto, TEntity> : IBaseService<TDto> where TEntity : class
     {
-        protected readonly IBaseRepository<TEntity> _repository;
-        protected readonly ILogger _logger;
+        private readonly IBaseRepository<TEntity> _repository;
+        private readonly ILogger _logger;
+      
         protected BaseService(IBaseRepository<TEntity> repository, ILogger logger)
         {
             _repository = repository;

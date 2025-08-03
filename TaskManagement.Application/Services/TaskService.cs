@@ -13,25 +13,36 @@ namespace TaskManagement.Application.Services
     {
         private readonly ITasksRepository _repository;
         private readonly ILogger<TaskService> _logger;
-        public TaskService(ITasksRepository repository, ILogger<TaskService> logger) 
+
+        private Func<TaskDto<int>, bool> _Validate = dto =>
+        !string.IsNullOrWhiteSpace(dto.Description) && dto.Status != null && dto.DueDate > DateTime.Now && dto is not null;
+        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate) 
             : base(repository, logger)
         {
             _repository = repository;
             _logger = logger;
+            _Validate = Validate;
         }
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
         {
             try
             {
+                if (!_Validate(dto))
+                {
+                    return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
+                }
                 var entity = dto.ToEntityFromDTo();
-
+                
                 var result = await _repository.AddAsync(entity);
 
-                if (!result.IsSuccess) { 
+                if (!result.IsSuccess)
+                {
                     _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
                     return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
                 }
-                return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data);
+                else { 
+                    return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data);
+                }
             }
             catch (Exception ex)
             {
@@ -44,15 +55,24 @@ namespace TaskManagement.Application.Services
         {
             try
             {
+
+                if (!_Validate(dto))
+                {
+                    return OperationResult<TaskDto<int>>.Failure("Datos inválidos para actualizar la tarea");
+                }
+
                 var entity = dto.ToEntityFromDTo();
                 entity.TaskId = id;
 
                 var result = await _repository.UpdateAsync(entity);
 
                 if (!result.IsSuccess)
+                {
                     return OperationResult<TaskDto<int>>.Failure("No se pudo actualizar la tarea");
-
-                return OperationResult<TaskDto<int>>.Success("Tarea actualizada correctamente", result.Data);
+                }
+                else { 
+                    return OperationResult<TaskDto<int>>.Success("Tarea actualizada correctamente", result.Data);
+                }
             }
             catch (Exception ex)
             {
@@ -71,6 +91,10 @@ namespace TaskManagement.Application.Services
                 {
                     return OperationResult<TaskDto<int>>.Failure("Tarea no encontrada");
                 }
+
+                Action<TaskDto<int>> NotifyDelete = dto =>
+                    _logger.LogError(getResult.Message);
+
                 var deleteResult = await _repository.DeleteAsync(getResult.Data);
 
                 if (!deleteResult.IsSuccess) 
@@ -85,19 +109,6 @@ namespace TaskManagement.Application.Services
                 return OperationResult<TaskDto<int>>.Failure($"Error: {ex.Message}");
             }
         }
-
-        //Task<OperationResult<TaskDto<int>>> IBaseService<TaskDto<int>>.GetByIdAsync(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //Task<OperationResult<List<TaskDto<int>>>> IBaseService<TaskDto<int>>.GetAllAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-       
-
   
     }
 }

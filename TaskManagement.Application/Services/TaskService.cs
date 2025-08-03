@@ -13,20 +13,21 @@ namespace TaskManagement.Application.Services
     {
         private readonly ITasksRepository _repository;
         private readonly ILogger<TaskService> _logger;
-
-        private Func<TaskDto<int>, bool> _Validate = dto =>
-        !string.IsNullOrWhiteSpace(dto.Description) && dto.Status != null && dto.DueDate > DateTime.Now && dto is not null;
-        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate) 
+        private readonly Func<TaskDto<int>, bool> _Validate;
+        private readonly Action<TaskDto<int>> _NotifyUpdate;
+        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate, Action<TaskDto<int>> NotifyUpdate) 
             : base(repository, logger)
         {
             _repository = repository;
             _logger = logger;
             _Validate = Validate;
+            _NotifyUpdate = NotifyUpdate;
         }
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
         {
             try
             {
+
                 if (!_Validate(dto))
                 {
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
@@ -58,6 +59,7 @@ namespace TaskManagement.Application.Services
 
                 if (!_Validate(dto))
                 {
+                    _NotifyUpdate(dto);
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para actualizar la tarea");
                 }
 

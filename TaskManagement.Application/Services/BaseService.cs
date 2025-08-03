@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using TaskManagement.Application.Dtos;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
@@ -10,11 +9,24 @@ namespace TaskManagement.Application.Services
     {
         private readonly IBaseRepository<TEntity> _repository;
         private readonly ILogger _logger;
-      
-        protected BaseService(IBaseRepository<TEntity> repository, ILogger logger)
+        //protected readonly Func<TDto, IEnumerable<string>> _Validate;
+        //protected readonly Action<int>? _OnDeleted;
+        //protected readonly Action<TDto>? _OnUpdated;
+        //protected readonly Action<TDto>? _OnCreated;
+
+        protected BaseService(IBaseRepository<TEntity> repository,
+            ILogger logger)
+            //Func<TDto, IEnumerable<string>> validate,
+            //Action<TDto>? onCreated,
+            //Action<int>? onDeleted,
+            //Action<TDto>? onUpdated)
         {
             _repository = repository;
             _logger = logger;
+            //_Validate = validate;
+            //_OnCreated = onCreated;
+            //_OnDeleted = onDeleted;
+            //_OnUpdated = onUpdated;
         }
         public async Task<OperationResult<List<TDto>>> GetAllAsync()
         {
@@ -61,26 +73,11 @@ namespace TaskManagement.Application.Services
 
         public async Task<OperationResult<TDto>> CreateAsync(TDto dto)
         {
-            //try
-            //{
-            //    var result = _repository.AddAsync(dto);
-            //    if (!result)
-            //    {
-                    
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    _logger.LogError(ex, "Error creating entity");
-            //    return Task.FromResult(OperationResult<TDto>.Failure($"Error: {ex.Message}"));
-            //}
             throw new NotImplementedException();
-
         }
 
         public async Task<OperationResult<TDto>> UpdateAsync(int id, TDto dto)
         {
-            
            throw new NotImplementedException();
         }
 

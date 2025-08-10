@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using TaskManagement.Application.Dtos;
 using TaskManagement.Application.Extentions;
+using TaskManagement.Application.Factories;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
@@ -15,13 +16,15 @@ namespace TaskManagement.Application.Services
         private readonly ILogger<TaskService> _logger;
         private readonly Func<TaskDto<int>, bool> _Validate;
         private readonly Action<TaskDto<int>> _NotifyUpdate;
-        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate, Action<TaskDto<int>> NotifyUpdate) 
+        private readonly ITaskFactory _factory;
+        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate, Action<TaskDto<int>> NotifyUpdate, ITaskFactory taskFactory) 
             : base(repository, logger)
         {
             _repository = repository;
             _logger = logger;
             _Validate = Validate;
             _NotifyUpdate = NotifyUpdate;
+            _factory = taskFactory;
         }
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
         {
@@ -32,18 +35,17 @@ namespace TaskManagement.Application.Services
                 {
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
                 }
-                var entity = dto.ToEntityFromDTo();
+                var entity = _factory.Create(dto, dto.Preset); //dto.ToEntityFromDTo();
                 
                 var result = await _repository.AddAsync(entity);
 
-                if (!result.IsSuccess)
+                if (!result.IsSuccess || result.Data is null)
                 {
                     _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
                     return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
                 }
-                else { 
-                    return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", result.Data);
-                }
+                var dtoOut = result.Data.ToDtoFromEntity<int>();
+                return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", dtoOut);
             }
             catch (Exception ex)
             {

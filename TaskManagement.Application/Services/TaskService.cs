@@ -36,18 +36,30 @@ namespace TaskManagement.Application.Services
                 {
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
                 }
-                var entity = _factory.Create(dto); //dto.ToEntityFromDTo();
+                var queue = new Queue<TaskDto<int>>();
+                queue.Enqueue(dto);
 
-                var result = await _repository.AddAsync(entity);
+                TaskDto<int>? dtoOut = null;
+                while (queue.Count > 0) 
+                { 
+                    var next = queue.Dequeue();
 
-                if (!result.IsSuccess || result.Data is null)
-                {
-                    _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
-                    return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
+                    var entity = _factory.Create(next); //dto.ToEntityFromDTo();
+
+                    var result = await _repository.AddAsync(entity);
+
+
+                    if (!result.IsSuccess || result.Data is null)
+                    {
+                        _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
+                        return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
+                    }
+
+
+                    var saved = (Tasks)result.Data;
+                    dtoOut = saved.ToDtoFromEntity<int>();
+                    await Task.Delay(1000); 
                 }
-                //var dtoOut = result.Data.ToEntityFromDTo();
-                var saved = (Tasks)result.Data;
-                var dtoOut = saved.ToDtoFromEntity<int>();
                 return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", dtoOut);
             }
             catch (Exception ex)

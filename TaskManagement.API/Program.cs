@@ -1,6 +1,6 @@
-
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Application.Dtos;
+using TaskManagement.Application.Factories;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Application.Services;
@@ -21,7 +21,7 @@ namespace TaskManagement.API
             // Add services to the container.
             builder.Services.AddScoped<ITasksRepository, TaskRepository>();
 
-
+            builder.Services.AddScoped<ITaskFactory, Application.Factories.TaskFactory>();
             builder.Services.AddTransient<ITaskService, TaskService>();
 
             builder.Services.AddScoped<Func<TaskDto<int>, bool>>(sp => dto =>
@@ -29,7 +29,6 @@ namespace TaskManagement.API
                 return dto is not null
                     && !string.IsNullOrWhiteSpace(dto.Description)
                     && dto.Status is not null
-                    && dto.DueDate > DateTime.UtcNow 
                     && dto.UserId > 0;
             });
 

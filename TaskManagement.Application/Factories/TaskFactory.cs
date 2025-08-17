@@ -5,45 +5,35 @@ using TaskManagement.Domain.Entities;
 
 namespace TaskManagement.Application.Factories
 {
-    public class TaskFactory: ITaskFactory
+    public class TaskFactory : ITaskFactory
     {
-       
-         public Tasks Create(TaskDto<int> dto, string? preset = null)
-        {
-            var e = dto.ToEntityFromDTo();
-
-            e.CreatedAt = e.CreatedAt == default ? DateTime.UtcNow : e.CreatedAt;
-            e.Status = string.IsNullOrWhiteSpace(e.Status) ? "Open" : e.Status;
-
-            if (e.Priority < Priorities.Low || e.Priority > Priorities.High)
-                e.Priority = Priorities.Medium;
-
-            switch (preset?.ToLowerInvariant())
+            public Tasks Create(TaskDto<int> dto)
             {
-                case "Alta":
-                    e.Priority = Priorities.High;
-                    e.DueDate = DateTime.UtcNow.AddDays(1);
-                    break;
+                var e = dto.ToEntityFromDTo();
 
-                case "Media":
+                e.CreatedAt = e.CreatedAt == default ? DateTime.UtcNow : e.CreatedAt;
+                e.Status = string.IsNullOrWhiteSpace(e.Status) ? "Open" : e.Status;
+
+                if (e.Priority < Priorities.Low || e.Priority > Priorities.High)
                     e.Priority = Priorities.Medium;
-                    e.DueDate = DateTime.UtcNow.AddDays(7);
-                    break;
 
-                case "Baja":
-                    e.Priority = Priorities.Low;
-                    e.DueDate = DateTime.UtcNow.AddDays(14);
-                    break;
+                switch (e.Priority)
+                {
+                    case Priorities.High:
+                        e.DueDate = DateTime.UtcNow.AddDays(1);
+                        break;
 
-                case "Bug":
-                    e.Priority = Priorities.High;
-                    e.Status = "ToDo";
-                    e.Description = string.IsNullOrWhiteSpace(e.Description)? "[BUG]" : $"[BUG] {e.Description}";
-                    e.DueDate = DateTime.UtcNow.AddDays(2);
-                    break;
+                    case Priorities.Medium:
+                        e.DueDate = DateTime.UtcNow.AddDays(7);
+                        break;
+
+                    case Priorities.Low:
+                        e.DueDate = DateTime.UtcNow.AddDays(14);
+                        break;
+
+                }
+
+                return e;
             }
-
-            return e;
         }
     }
-}

@@ -26,6 +26,7 @@ namespace TaskManagement.Application.Services
             _NotifyUpdate = NotifyUpdate;
             _factory = taskFactory;
         }
+
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
         {
             try
@@ -35,8 +36,8 @@ namespace TaskManagement.Application.Services
                 {
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
                 }
-                var entity = _factory.Create(dto, dto.Preset); //dto.ToEntityFromDTo();
-                
+                var entity = _factory.Create(dto); //dto.ToEntityFromDTo();
+
                 var result = await _repository.AddAsync(entity);
 
                 if (!result.IsSuccess || result.Data is null)
@@ -44,7 +45,9 @@ namespace TaskManagement.Application.Services
                     _logger.LogError("No se pudo crear la tarea {Error}", result.Message);
                     return OperationResult<TaskDto<int>>.Failure("No se pudo crear la tarea");
                 }
-                var dtoOut = result.Data.ToDtoFromEntity<int>();
+                //var dtoOut = result.Data.ToEntityFromDTo();
+                var saved = (Tasks)result.Data;
+                var dtoOut = saved.ToDtoFromEntity<int>();
                 return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", dtoOut);
             }
             catch (Exception ex)

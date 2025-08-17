@@ -7,6 +7,6 @@ namespace TaskManagement.Application.Factories
 {
     public interface ITaskFactory
     {
-        Tasks Create(TaskDto<int> dto, string? preset = null);
+        Tasks Create(TaskDto<int> dto);
     }
 }

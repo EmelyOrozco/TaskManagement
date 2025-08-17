@@ -19,8 +19,6 @@ namespace TaskManagement.Application.Dtos
         public DateTime? CreatedAt { get; set; } = DateTime.UtcNow;
 
         public Guid Rowguid { get; set; } = Guid.NewGuid();
-        public string? Preset { get; set; }
-
 
     }
 }

@@ -8,6 +8,7 @@ using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
 using TaskManagement.Domain.Entities;
 
+
 namespace TaskManagement.Application.Services
 {
     public class TaskService : BaseService<TaskDto<int>, Tasks>, ITaskService
@@ -17,6 +18,7 @@ namespace TaskManagement.Application.Services
         private readonly Func<TaskDto<int>, bool> _Validate;
         private readonly Action<TaskDto<int>> _NotifyUpdate;
         private readonly ITaskFactory _factory;
+        //private readonly TaskContext _taskContext;
         public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate, Action<TaskDto<int>> NotifyUpdate, ITaskFactory taskFactory) 
             : base(repository, logger)
         {
@@ -31,6 +33,10 @@ namespace TaskManagement.Application.Services
         {
             try
             {
+                if(!await _repository.ExistsAsync(dto.TaskId))
+                {
+                    return OperationResult<TaskDto<int>>.Failure("Ya existe una tarea con el ID proporcionado");
+                }
 
                 if (!_Validate(dto))
                 {
@@ -93,6 +99,11 @@ namespace TaskManagement.Application.Services
             try
             {
                 var getResult = await _repository.GetByIdAsync(id);
+                _logger.LogInformation($"Obteniendo tarea con ID {id}");
+                if (!getResult.IsSuccess)
+                {
+                    return OperationResult<TaskDto<int>>.Failure("Error al obtener la tarea");
+                }
 
                 if (!getResult.IsSuccess || getResult.Data == null)
                 {

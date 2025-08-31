@@ -1,4 +1,5 @@
-﻿using TaskManagement.Domain.Base;
+﻿using System.Linq.Expressions;
+using TaskManagement.Domain.Base;
 
 namespace TaskManagement.Application.Interfaces.Services
 {
@@ -9,5 +10,6 @@ namespace TaskManagement.Application.Interfaces.Services
         Task<OperationResult<TDto>> CreateAsync(TDto dto);
         Task<OperationResult<TDto>> UpdateAsync(int id, TDto dto);
         Task<OperationResult<TDto>> DeleteAsync(int id);
+        //Task<bool> ExistsAsync(int id);
     }
 }

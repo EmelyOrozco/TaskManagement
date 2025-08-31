@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Linq.Expressions;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
@@ -9,24 +10,12 @@ namespace TaskManagement.Application.Services
     {
         private readonly IBaseRepository<TEntity> _repository;
         private readonly ILogger _logger;
-        //protected readonly Func<TDto, IEnumerable<string>> _Validate;
-        //protected readonly Action<int>? _OnDeleted;
-        //protected readonly Action<TDto>? _OnUpdated;
-        //protected readonly Action<TDto>? _OnCreated;
 
         protected BaseService(IBaseRepository<TEntity> repository,
             ILogger logger)
-            //Func<TDto, IEnumerable<string>> validate,
-            //Action<TDto>? onCreated,
-            //Action<int>? onDeleted,
-            //Action<TDto>? onUpdated)
         {
             _repository = repository;
             _logger = logger;
-            //_Validate = validate;
-            //_OnCreated = onCreated;
-            //_OnDeleted = onDeleted;
-            //_OnUpdated = onUpdated;
         }
         public async Task<OperationResult<List<TDto>>> GetAllAsync()
         {
@@ -86,7 +75,18 @@ namespace TaskManagement.Application.Services
             throw new NotImplementedException();
         }
 
-
+        //public async Task<bool> ExistsAsync(int id)
+        //{
+        //    try
+        //    {
+        //        return await _repository.ExistsAsync(id);
+        //    }
+        //    catch
+        //    {
+        //        _logger.LogError("Error checking existence of entity");
+        //        return false;
+        //    }
+        //}
     }
     
 }

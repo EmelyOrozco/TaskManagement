@@ -2,7 +2,7 @@
 
 namespace TaskManagement.Application.Dtos
 {
-    public class TaskDto<T>
+    public record class TaskDto<T>
     {
         public int TaskId { get; set; }
 

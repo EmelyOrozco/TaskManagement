@@ -15,6 +15,6 @@ namespace TaskManagement.Application.Interfaces.Repositories
 
         Task<OperationResult<TEntity>> DeleteAsync(TEntity entity);
 
-        Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> filter);
+        //Task<bool> ExistsAsync(int id);
     }
 }

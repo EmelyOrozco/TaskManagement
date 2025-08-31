@@ -33,10 +33,10 @@ namespace TaskManagement.Application.Services
         {
             try
             {
-                if(!await _repository.ExistsAsync(dto.TaskId))
-                {
-                    return OperationResult<TaskDto<int>>.Failure("Ya existe una tarea con el ID proporcionado");
-                }
+                //if(!await _repository.ExistsAsync(x => x.TaskId == dto.TaskId || x.Description == dto.Description))
+                //{
+                //    return OperationResult<TaskDto<int>>.Failure("Ya existe una tarea con el ID proporcionado");
+                //}
 
                 if (!_Validate(dto))
                 {

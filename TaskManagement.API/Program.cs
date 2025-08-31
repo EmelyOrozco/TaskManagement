@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using TaskManagement.Application.Dtos;
 using TaskManagement.Application.Factories;
 using TaskManagement.Application.Interfaces.Repositories;
@@ -20,9 +23,34 @@ namespace TaskManagement.API
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DbTask")));
             // Add services to the container.
             builder.Services.AddScoped<ITasksRepository, TaskRepository>();
+            builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+            });
+
+           
 
             builder.Services.AddScoped<ITaskFactory, Application.Factories.TaskFactory>();
             builder.Services.AddTransient<ITaskService, TaskService>();
+            builder.Services.AddScoped<IUsersService, UserService>();
 
             builder.Services.AddScoped<Func<TaskDto<int>, bool>>(sp => dto =>
             { 
@@ -52,6 +80,8 @@ namespace TaskManagement.API
 
             var app = builder.Build();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

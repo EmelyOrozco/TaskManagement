@@ -1,8 +1,11 @@
 ﻿
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using System.Xml;
 using TaskManagement.Application.Dtos;
 using TaskManagement.Application.Extentions;
 using TaskManagement.Application.Factories;
+using TaskManagement.Application.Hubs;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
@@ -18,15 +21,21 @@ namespace TaskManagement.Application.Services
         private readonly Func<TaskDto<int>, bool> _Validate;
         private readonly Action<TaskDto<int>> _NotifyUpdate;
         private readonly ITaskFactory _factory;
+        private readonly IHubContext<TaskHub> _hubcontext;
         //private readonly TaskContext _taskContext;
-        public TaskService(ITasksRepository repository, ILogger<TaskService> logger, Func<TaskDto<int>, bool> Validate, Action<TaskDto<int>> NotifyUpdate, ITaskFactory taskFactory) 
-            : base(repository, logger)
+        public TaskService(ITasksRepository repository, 
+            ILogger<TaskService> logger,
+                Func<TaskDto<int>,bool> Validate,
+                Action<TaskDto<int>> NotifyUpdate,
+                ITaskFactory taskFactory,
+                IHubContext<TaskHub> hubContext) :base(repository, logger)
         {
             _repository = repository;
             _logger = logger;
             _Validate = Validate;
             _NotifyUpdate = NotifyUpdate;
             _factory = taskFactory;
+            _hubcontext = hubContext;
         }
 
         public async Task<OperationResult<TaskDto<int>>> CreateAsync(TaskDto<int> dto)
@@ -41,6 +50,12 @@ namespace TaskManagement.Application.Services
                 if (!_Validate(dto))
                 {
                     return OperationResult<TaskDto<int>>.Failure("Datos inválidos para crear la tarea");
+                }
+                var exist = await _repository.ExistsAsync(x => x.Description == dto.Description);
+
+                if (exist.Data)
+                {
+                    return OperationResult<TaskDto<int>>.Failure($"Ya existe una tarea con la descripción {dto.Description}");
                 }
                 var queue = new Queue<TaskDto<int>>();
                 queue.Enqueue(dto);
@@ -66,6 +81,7 @@ namespace TaskManagement.Application.Services
                     dtoOut = saved.ToDtoFromEntity<int>();
                     await Task.Delay(1000); 
                 }
+                await _hubcontext.Clients.All.SendAsync("ReceiveTaskCreateNotification", $"Se ha creado la tarea {dto.Description} a entregar en fecha {dto.DueDate}");
                 return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", dtoOut);
             }
             catch (Exception ex)

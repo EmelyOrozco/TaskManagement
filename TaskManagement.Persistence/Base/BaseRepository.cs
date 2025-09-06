@@ -92,12 +92,21 @@ namespace TaskManagement.Persistence.Base
                 return OperationResult<TEntity>.Failure($"Error updating entity: {typeof(TEntity)} - {ex.Message}");
             }
         }
-        //public virtual async Task<bool> ExistsAsync(int id)
-        //{
 
-           
+        public virtual async Task<OperationResult<bool>> ExistsAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            try
+            {
+                var exists = await _dbSet.AnyAsync(filter);
+                return OperationResult<bool>.Success($"Existence check on {typeof(TEntity)} completed successfully", exists);
+            }
+            catch (Exception ex)
+            {
+                var innerMessage = ex.InnerException?.Message ?? ex.Message;
+                return OperationResult<bool>.Failure($"Error checking existence for entity {typeof(TEntity)}: {innerMessage}");
+            }
+        }
 
-        //}
 
     }
 }

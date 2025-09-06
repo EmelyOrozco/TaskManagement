@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TaskManagement.Application.Dtos;
 using TaskManagement.Application.Factories;
+using TaskManagement.Application.Hubs;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Application.Services;
@@ -46,7 +47,7 @@ namespace TaskManagement.API
                 };
             });
 
-           
+            builder.Services.AddSignalR();
 
             builder.Services.AddScoped<ITaskFactory, Application.Factories.TaskFactory>();
             builder.Services.AddTransient<ITaskService, TaskService>();
@@ -79,6 +80,8 @@ namespace TaskManagement.API
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            app.MapHub<TaskHub>("/taskhub");
 
             app.UseAuthentication();
             app.UseAuthorization();

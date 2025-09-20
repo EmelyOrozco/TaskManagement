@@ -11,7 +11,6 @@ namespace TaskManagement.Application.Factories
             {
                 var e = dto.ToEntityFromDTo();
 
-                e.CreatedAt = e.CreatedAt == default ? DateTime.UtcNow : e.CreatedAt;
                 e.Status = string.IsNullOrWhiteSpace(e.Status) ? "Open" : e.Status;
 
                 if (e.Priority < Priorities.Low || e.Priority > Priorities.High)

@@ -43,7 +43,9 @@ namespace TaskManagement.Application.Services
             var token = new JwtSecurityToken(
             issuer: issuer,
             claims: claims,
-            expires: DateTime.Now.AddMinutes(120),
+            audience: _configuration["Jwt:Audience"],
+            notBefore: DateTime.UtcNow,
+            expires: DateTime.UtcNow.AddMinutes(120),
             signingCredentials: credentials
             
             );

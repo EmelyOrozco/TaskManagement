@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Linq.Expressions;
 using TaskManagement.Application.Interfaces.Repositories;
 using TaskManagement.Application.Interfaces.Services;
 using TaskManagement.Domain.Base;
@@ -74,19 +73,6 @@ namespace TaskManagement.Application.Services
         {
             throw new NotImplementedException();
         }
-
-        //public async Task<bool> ExistsAsync(int id)
-        //{
-        //    try
-        //    {
-        //        return await _repository.ExistsAsync(id);
-        //    }
-        //    catch
-        //    {
-        //        _logger.LogError("Error checking existence of entity");
-        //        return false;
-        //    }
-        //}
     }
     
 }

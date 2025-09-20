@@ -41,9 +41,21 @@ namespace TaskManagement.API
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = builder.Configuration["Jwt:Issuer"],
-                    ValidAudience = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        if (context.Request.Cookies.ContainsKey("jwt"))
+                        {
+                            context.Token = context.Request.Cookies["jwt"];
+                        } 
+                        return Task.CompletedTask;
+                    }
                 };
             });
 
@@ -92,9 +104,7 @@ namespace TaskManagement.API
                 app.UseSwaggerUI();
             }
 
-            app.UseAuthorization();
-
-
+            app.UseHttpsRedirection();
             app.MapControllers();
 
             app.Run();

@@ -42,10 +42,6 @@ namespace TaskManagement.Application.Services
         {
             try
             {
-                //if(!await _repository.ExistsAsync(x => x.TaskId == dto.TaskId || x.Description == dto.Description))
-                //{
-                //    return OperationResult<TaskDto<int>>.Failure("Ya existe una tarea con el ID proporcionado");
-                //}
 
                 if (!_Validate(dto))
                 {
@@ -57,6 +53,7 @@ namespace TaskManagement.Application.Services
                 {
                     return OperationResult<TaskDto<int>>.Failure($"Ya existe una tarea con la descripción {dto.Description}");
                 }
+
                 var queue = new Queue<TaskDto<int>>();
                 queue.Enqueue(dto);
 
@@ -81,7 +78,7 @@ namespace TaskManagement.Application.Services
                     dtoOut = saved.ToDtoFromEntity<int>();
                     await Task.Delay(1000); 
                 }
-                await _hubcontext.Clients.All.SendAsync("ReceiveTaskCreateNotification", $"Se ha creado la tarea {dto.Description} a entregar en fecha {dto.DueDate}");
+     
                 return OperationResult<TaskDto<int>>.Success("Tarea creada correctamente", dtoOut);
             }
             catch (Exception ex)
@@ -155,6 +152,5 @@ namespace TaskManagement.Application.Services
                 return OperationResult<TaskDto<int>>.Failure($"Error: {ex.Message}");
             }
         }
-  
     }
 }

@@ -22,11 +22,12 @@ namespace TaskManagement.Application.Services
         {
             try
             {
-                //if (!await _repository.ExistsAsync(x => x.UserId == dto.UserId 
-                //|| x.Username == dto.Username || x.Email == dto.Email))
-                //{
-                //    return OperationResult<UsersDto<int>>.Failure("Ya existe un usuario con el ID proporcionado");
-                //}
+                var exist = await _repository.ExistsAsync(x => x.Username == dto.Username);
+
+                if (exist.Data)
+                {
+                    return OperationResult<UsersDto<int>>.Failure($"Ya existe un Usuario con este user name, intente con otro");
+                }
 
                 var entity = dto.ToUsersEntityFromDTo();
 

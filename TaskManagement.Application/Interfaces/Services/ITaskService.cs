@@ -1,6 +1,7 @@
 ﻿
 
 using TaskManagement.Application.Dtos;
+using TaskManagement.Domain.Base;
 
 namespace TaskManagement.Application.Interfaces.Services
 {
